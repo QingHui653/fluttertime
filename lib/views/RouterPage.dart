@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-/**
- * 1. 路由  MaterialPageRoute 
- * 2. 点击 列表 进入 喜欢 列表
- */
+///
+///1. 路由  MaterialPageRoute 
+///2. 点击 列表 进入 喜欢 列表
+///
 class RouterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

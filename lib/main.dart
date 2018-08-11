@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertime/views/ThemePage.dart';
+import 'package:fluttertime/zhihu/Main.dart';
 
-/* State */
-void main() => runApp(new ThemePage());
+void main() => runApp(new Main());
