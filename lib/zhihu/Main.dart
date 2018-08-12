@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'dart:io';
+import 'package:http/http.dart' as http;
 import 'dart:convert';
 // import 'package:dio/dio.dart';
 
@@ -74,29 +74,4 @@ class MainList extends State<MainView> {
     );
   }
  
-}
-
-
-class HttpUtil {
-   getList () {
-      var httpClient = new HttpClient();
-      // var uri = new Uri.http("news-at.zhihu.com","/api/4/news/latest");
-      // var request = await httpClient.getUrl(uri);
-      // var response = await request.close();
-      // var responseBody = await response.transform(Utf8Decoder()).join();
-      // print(responseBody);
-      var body;
-      httpClient.getUrl(Uri.parse("http://news-at.zhihu.com/api/4/news/latest"))
-         .then((HttpClientRequest request) {
-            return request.close();
-          })
-        .then((HttpClientResponse response) {
-          var responseBody = response.transform(Utf8Decoder()).join();
-          print("2-------------sync");
-          print(responseBody);
-          body = responseBody;
-        });
-
-      return body;  
-   }
 }

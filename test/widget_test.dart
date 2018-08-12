@@ -9,7 +9,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:fluttertime/views/FirstPage.dart';
 
-import 'package:fluttertime/zhihu/Main.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
@@ -30,8 +31,11 @@ void main() {
   });
 
   testWidgets('http', (WidgetTester tester) async {
-      var httpUtil = new HttpUtil();
-      var body =httpUtil.getList();
-      print(body);
+      String url = 'https://httpbin.org/ip';
+      var response = await http.read(url);
+      Map data = json.decode(response);
+      String ip = data['origin'];
+      print(ip);
+      print(data);
   });
 }
